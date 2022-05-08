@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="css/home.css" />
+    <link
+      rel="stylesheet"
+      href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css"
+    />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css"
+    />
+    <script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
+    <title>Document</title>
+  </head>
+  <body>
+    <header class="background-header">
+      <div class="logo">
+        <img
+          class="img"
+          src="../view/img/logo-tongcuc1_b9e60-removebg-preview.png"
+          alt=""
+        />
+        <nav
+          class="navbar navbar-inverse justify-content-center"
+          style="
+            width: 70%;
+            margin: 0 15% 0;
+            background-color: #0000ff;
+            font-weight: bold;
+          "
+        >
+          <div class="container-fluid">
+            <ul class="nav navbar-nav ">
+              <li><a class="navbar-brand" href="#">Trang chủ</a></li>
+              <li><a href="#">Giới thiệu</a></li>
+              <li class="dropdown"><a href="#">Quản lý vi phạm</a></li>
+              <li><a href="#">Đổi GPLX trực tuyến</a></li>
+            </ul>
+            <ul class="nav navbar-nav navbar-right">
+              <li>
+                <a href="#"
+                  ><img
+                    height="20px"
+                    width="20px"
+                    src="../view/img/search.png"
+                    alt=""
+                /></a>
+              </li>
+              <li>
+                <a href="#">
+                  <img
+                    height="20px"
+                    width="20px"
+                    src="../view/img/user.png"
+                    alt=""
+                /></a>
+              </li>
+            </ul>
+          </div>
+        </nav>
+      </div>
+    </header>
+    <div class="container" style="width: 70%">
+      <h2>TRA CỨU THÔNG TIN GIẤY PHÉP LÁI XE</h2>
+      <form>
+        <div class="form-group row">
+          <label for="select" class="col-sm-3 col-form-label">Loại GPLX:</label>
+          <div class="col-sm-6">
+            <select class="form-control form-control-lg">
+              <option>GPLX PET(Có thời hạn)</option>
+              <option>GPLX PET(Không thời hạn)</option>
+              <option>GPLX cũ (làm bằng giấy bìa)</option>
+            </select>
+          </div>
+        </div>
+        <div class="form-group row">
+          <label for="inputSoGPLX" class="col-sm-3 col-form-label"
+            >Số GPLX:</label
+          >
+          <div class="col-sm-6">
+            <input type="text" class="form-control" id="inputSoGPLX" />
+            <h6>Nhập số GPLX đã cấp</h6>
+          </div>
+        </div>
+        <div class="form-group row">
+          <label for="input" class="col-sm-3 col-form-label"
+            >Ngày/Tháng/Năm sinh:</label
+          >
+          <div class="col-sm-6">
+            <input class="form-control" type="datetime-local" />
+            <h6>
+              Ngày sinh: dd/MM/yyyy (nếu GPLX PET) hoặc Năm sinh: yyyy (nếu GPLX
+              cũ)
+            </h6>
+          </div>
+        </div>
+        <div class="form-group row">
+          <label for="input" class="col-sm-3 col-form-label">Mã bảo vệ :</label>
+          <div class="col-sm-6">
+            <input type="text" id="capt" readonly="readonly" />
+
+            <div id="refresh">
+              <img src="./img/refresh.png" width="50px" height="50px" onclick="cap()" />
+            </div>
+
+            <input type="text" id="textinput" placeholder="enter.." />
+            <button onclick="validcap()">Check</button>
+          </div>
+         
+        </div>
+
+        <div class="form-group row">
+          <div class="col-sm-4">
+            <button type="submit" class="btn btn-warning">
+              Tra Cứu Giấy Phép Lái Xe
+            </button>
+          </div>
+        </div>
+      </form>
+      <section>
+        <h4>THÔNG BÁO</h4>
+        <div>
+          <span>
+            <a href="">Phần mềm mô phỏng các tình huống giao thông dùng cho đào tạo lái xe ô tô</a>
+          </span>
+          <hr class="my-1">
+          <span>
+            <a href="">Phần mềm Desktop Cloud Camera (Phiên bản 1.2.08.12.21)</a>
+          </span>
+          <hr class="my-1">
+          <span>
+            <a href="">Cập nhật phần mềm sát hạch dành cho hạng A2 (ngày 15/11/2021)</a>
+          </span>
+          <hr class="my-1">
+          <span>
+            <a href="">Bộ tài liệu về DVC4 đổi GPLX.</a>
+          </span>
+          <hr class="my-1">
+          <span>
+            <a href="">Phần mềm, tài liệu hướng dẫn sử dụng hệ thống giám sát camera tại các TTSHLX​.</a>
+          </span>
+          <hr class="my-1">
+          <span>
+            <a href="">Danh sách cấm cấp GPLX 5 năm.​</a>
+          </span>
+          <hr class="my-1">
+          <span>
+            <a href="">Phần mềm thi sát hạch.</a>
+          </span>
+          <hr class="my-1">
+          <span>
+            <a href="">Bộ câu hỏi sát hạch - 600 câu hỏi.</a>
+          </span>
+          <hr class="my-1">
+          <span>
+            <a href="">Bộ câu hỏi sát hạch dành cho hạng A3-A4.</a>
+          </span>
+          <hr class="my-1">
+          <span>
+            <a href="">Bộ câu hỏi sát hạch dành cho hạng A2.</a>
+          </span>
+          <hr class="my-1">
+
+        </div>
+    </section>
+      <aside>
+        <h4>CHUYÊN MỤC</h4>
+        <div class="categories">
+          <a href="">Cơ sở đào đạo lái xe</a> 
+          <hr class="my-2">
+          <a href="">Trung tâm sát hạch</a>
+          <hr class="my-2">
+          <a href="">Thống kê số liệu về công tác đào tạo,sát hạch ,cấp GPLX</a>
+          <hr class="my-2">
+          <a href="">Phần mềm mô phỏng các tình huống giao thông dùng cho đào tạo lái xe ô tô</a>
+           <hr class="my-2">
+        </div>
+        <h4>THỦ TỤC HÀNH CHÍNH</h4>
+        <div >
+          <a href="">Đơn xin đổi GPLX </a> 
+          <hr class="my-1">
+          <a href="">Thủ tục đổi GPLX</a>
+          <hr class="my-1">
+          <a href="">Thông tư 12/2017/TT-BGTVT​</a>
+          <hr class="my-1">
+          <a href="">Thông tư 29/2015/TT-BGTVT</a>
+           <hr class="my-1">
+        </div>
+    </aside>
+    
+    </div>
+  
+     
+  
+
+    <footer style="background-color: #202878">
+      <div class="footer">
+        <h4>Trang Thông tin điện tử giấy phép lái xe</h4>
+        <br />
+        <span>
+          Địa chỉ: Ô D20 - Khu Đô Thị Cầu Giấy mới- Cầu Giấy - Hà Nội Điện
+          thoại: 04-37955190 Fax:04-38571440</span
+        >
+      </div>
+    </footer>
+
+    <script>
+      config = {
+        enableTime: true,
+      };
+
+      flatpickr("input[type=datetime-local]", config);
+    </script>
+  </body>
+</html>
